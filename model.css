@@ -1,15 +1,22 @@
-:root{
-    --fontSize:calc(max(1rem,3dvh));
+:root {
+    --fontSize: calc(max(1rem, 2dvh));
+    --minWidthSize: calc(max(1rem, 3dvw));
+    --textWidth: calc(max(1rem, 2dvw, 2dvh));
 }
-.timeinput{
+.Htext,.Mtext ,.Stext{
+    width: var(--textWidth);
+    font-size: var(--textWidth);
+}
+.timeinput {
     display: flex;
 }
 .inputnum {
-    width: 5dvw;
+    width: calc(max(1rem, 3dvw, var(--minWidthSize)) + 20px + var(--textWidth) + max(5dvh, var(--minWidthSize)));
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
+    align-items: flex-end;
 }
 
 .uptriangle {
@@ -25,8 +32,8 @@
 }
 
 .upanddown {
-    height: calc(3dvh + 20px);
-    width: 1dvw;
+    height: calc(max(3dvh, 3dvw) + 20px);
+    width: calc(max(5dvh, var(--minWidthSize)));
     background-color: #a59681;
     border-radius: 0% 30% 30% 0%;
 }
@@ -44,8 +51,8 @@
 }
 
 .triangleSVG {
-    width: 1dvw;
-    height:var(--fontSize);
+    width: var(--minWidthSize);
+    height: var(--fontSize);
     position: absolute;
 }
 
@@ -68,31 +75,29 @@
 }
 
 input[type="number"] {
-    font-family: 'Yozai', Courier, monospacez;
+    font-family: "Yozai", Courier, monospacez;
     background-color: #a59681;
     border: none;
     border-radius: 15% 0% 0% 15%;
     font-size: var(--fontSize);
     padding: 10px;
-    width: 3dvw;
-    height: 3dvh;
+    width: calc(max(5dvh, 3dvw));
+    height: calc(max(3dvh, 3dvw));
     text-align: center;
     -moz-appearance: textfield;
 }
 
-
-input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
 
 /* 选择input[type="number"]旁边的兄弟元素（加减按钮） */
-input[type="number"]+div {
+input[type="number"] + div {
     position: relative;
     display: inline-block;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -115,6 +120,7 @@ body {
     position: relative;
     background: #775e40;
     height: calc(max(15dvh, 150px));
+    width: calc(min(max(45dvh, 50dvw), 90dvw));
     padding: 20px;
     padding-bottom: 10dvh;
     border-radius: 5px;
@@ -123,28 +129,28 @@ body {
 
 #closeBtn {
     text-align: center;
-    width: 3dvw;
+    width: calc(max(5dvh, 3dvw));
     height: calc(max(3dvh, 40px));
     border-radius: 5%;
     border: 1px #97714d solid;
     cursor: pointer;
     color: #333;
-    font-size: calc(min(max(3dvh, 40px),var(--fontSize)*2));
+    font-size: calc(min(max(3dvh, 40px), var(--fontSize) * 2));
     font-weight: bold;
     position: absolute;
     bottom: 10px;
-    right:  calc(3dvw + 40px);
+    right: calc(max(5dvh, 3dvw) + 40px);
 }
 
 #saveBtn {
     text-align: center;
-    width: 3dvw;
+    width: calc(max(5dvh, 3dvw));
     height: calc(max(3dvh, 40px));
     border-radius: 5%;
     border: 1px #97714d solid;
     cursor: pointer;
     color: #333;
-    font-size: calc(min(max(3dvh, 40px),var(--fontSize)*2));
+    font-size: calc(min(max(3dvh, 40px), var(--fontSize) * 2));
     font-weight: bold;
     position: absolute;
     bottom: 10px;

@@ -155,12 +155,12 @@
                 <div class="triangleC"></div>
                 <div class="triangleD"></div>
             </div>
-            <div class="cirleSec"></div>
+            <div class="cirleHour"></div>
             <p class="time"></p>
             <div class="edit" onclick="openModal()"><img src="./edit-button.png" alt=""></div>
         </div>
 
-        
+
     </div>
 
 
@@ -170,8 +170,8 @@
             <h2 class="modaltitle">時間調整</h2>
             <div class="timeinput">
                 <div class="inputnum">
-                    <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputH" class="numberInput" value="00" max="23"
-                        min="0">
+                    <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputH"
+                        class="numberInput" value="00" max="23" min="0">
                     <div class="upanddown">
                         <svg class="triangleSVG up" viewBox="-50 -50 300 300">
                             <polygon onclick="HourbtnUp()" class="uptriangle" stroke-linejoin="round"
@@ -182,11 +182,11 @@
                                 points="100,200 0,0 200,0" />
                         </svg>
                     </div>
+                    <div class="Htext">時</div>
                 </div>
-                <div>時</div>
                 <div class="inputnum">
-                    <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputM" class="numberInput" value="00" max="59"
-                        min="0">
+                    <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputM"
+                        class="numberInput" value="00" max="59" min="0">
                     <div class="upanddown">
                         <svg class="triangleSVG up" viewBox="-50 -50 300 300">
                             <polygon onclick="MinbtnUp()" class="uptriangle" stroke-linejoin="round"
@@ -197,8 +197,8 @@
                                 points="100,200 0,0 200,0" />
                         </svg>
                     </div>
+                    <div class="Mtext">分</div>
                 </div>
-                <div>分</div>
                 <div class="inputnum">
                     <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputS"
                         class="numberInput" value="00" max="59" min="0">
@@ -212,8 +212,8 @@
                                 points="100,200 0,0 200,0" />
                         </svg>
                     </div>
+                    <div class="Stext">秒</div>
                 </div>
-                <div>秒</div>
             </div>
             <div id="closeBtn" onclick="closeModal()">&times;</div>
             <div id="saveBtn" onclick="SaveModal()">&nu;</div>
@@ -234,14 +234,14 @@
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const Time = $(".time");
     const MinutesTriangle = $(".circleTriangle");
-    const SecondsCirle = $(".square");
-    const HoursSquare = $(".cirleSec");
+    const HourCirle = $(".cirleHour");
+    const SecondSquare = $(".square");
     const YearText = $(".year");
     const MonthText = $(".month");
     const DateText = $(".date");
+    HourCirle.css({ transform: `rotate(${now.getHours()  * 30 +(now.getMinutes() / 2) }deg)` });
     MinutesTriangle.css({ transform: `rotate(${now.getMinutes() * 6}deg)` });
-    SecondsCirle.css({ transform: `rotate(${now.getSeconds() * 6}deg)` });
-    HoursSquare.css({ transform: `rotate(${now.getHours() * 30 + (now.getMinutes() / 2 + 45)}deg)` });
+    SecondSquare.css({transform: `rotate(${now.getSeconds()* 6 + 45}deg)`  });
     YearText.text(`${year}`);
     MonthText.text(`${month}`);
     DateText.text(`${date}`);
@@ -257,18 +257,18 @@
         document.getElementById('modal').style.display = 'none';
     }
     function editTime() {
-        HoursSquare.css({ transform: `rotate(${now.getHours() * 30 + (now.getMinutes() / 2 + 45)}deg)` })
+        HourCirle.css({ transform: `rotate(${now.getHours() * 30 + (now.getMinutes() / 2 + 45)}deg)` })
         MinutesTriangle.css({ transform: `rotate(${now.getMinutes() * 6}deg)` })
-        SecondsCirle.css({ transform: `rotate(${now.getSeconds() * 6}deg)` })
+        SecondSquare.css({ transform: `rotate(${now.getSeconds() * 6}deg)` })
     }
     function ChangeHour(H, M) {
-        HoursSquare.css({ transform: `rotate(${H * 30 + (M / 2 + 45)}deg)` });
+        HourCirle.css({ transform: `rotate(${H * 30 + (M / 2 )}deg)` });
     }
     function ChangeMin(M) {
         MinutesTriangle.css({ transform: `rotate(${M * 6}deg)` });
     }
     function ChangeSec(S) {
-        SecondsCirle.css({ transform: `rotate(${S * 6}deg)` });
+        SecondSquare.css({ transform: `rotate(${S * 6 + 45}deg)` });
     }
 
     InputHour = $("#numberInputH")
@@ -327,7 +327,7 @@
         let H = InputHour[0].valueAsNumber;
         let M = InputMin[0].valueAsNumber;
         let S = InputSec[0].valueAsNumber;
-        Time.text(`${H>9? H:`0${H}`}:${M>9? M:`0${M}`}:${S>9? S:`0${S}`}`)
+        Time.text(`${H > 9 ? H : `0${H}`}:${M > 9 ? M : `0${M}`}:${S > 9 ? S : `0${S}`}`)
         ChangeHour(H, M);
         ChangeMin(M);
         ChangeSec(S);
@@ -340,7 +340,7 @@
         --WidthAndHeight: calc(min(40dvh, 30dvw));
         --clock: calc(var(--WidthAndHeight)*0.27);
         --TriangleMove: calc((var(--WidthAndHeight)*0.3 - min(50dvh, 50dvw)/50*4)*0.9);
-        --TriangleWidth: calc(var(--WidthAndHeight)*0.75*0.9);
+        --TriangleWidth: calc(var(--WidthAndHeight)/3*2 - 10px);
         --background: #212f22;
         --fontSize: calc(max(1rem, 2dvh));
     }
@@ -479,7 +479,7 @@
 
     .triangleD {
         position: absolute;
-        width: calc(var(--TriangleWidth)*2/3*0.95);
+        width: calc(var(--TriangleWidth)*2/3 - 20px);
         height: calc(var(--WidthAndHeight)/50*2);
         box-sizing: border-box;
         background-color: var(--background);
@@ -491,9 +491,9 @@
         /* box-shadow: calc(min(50dvh, 50dvw)/50) calc(min(50dvh, 50dvw)/50) #97714d,calc(min(50dvh, 50dvw)/50) calc(min(50dvh, 50dvw)/50*-1) #97714d; */
     }
 
-    .cirleSec {
-        width: calc(var(--TriangleWidth)*2/3*0.76);
-        height: calc(var(--TriangleWidth)*2/3*0.76);
+    .cirleHour {
+        width: calc(var(--TriangleWidth)*2/3 - min(1dvh,1dvw)*2);
+        height: calc(var(--TriangleWidth)*2/3 - min(1dvh,1dvw)*2);
         border-radius: 50%;
         position: absolute;
         display: flex;
@@ -501,10 +501,11 @@
         z-index: -2;
         justify-content: center;
         transform: rotate(0deg);
-        border: 1dvh solid #97714d;
+        box-sizing: border-box;
+        border: calc(min(1dvh,1dvw)) solid #97714d;
     }
 
-    .cirleSec::after {
+    .cirleHour::after {
         content: "";
         position: absolute;
         width: calc(var(--TriangleWidth)*2/3*0.95/2);
