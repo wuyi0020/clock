@@ -234,8 +234,8 @@
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const Time = $(".time");
     const MinutesTriangle = $(".circleTriangle");
-    const SecondsCirle = $(".cirleSec");
-    const HoursSquare = $(".square");
+    const SecondsCirle = $(".square");
+    const HoursSquare = $(".cirleSec");
     const YearText = $(".year");
     const MonthText = $(".month");
     const DateText = $(".date");
@@ -257,9 +257,9 @@
         document.getElementById('modal').style.display = 'none';
     }
     function editTime() {
+        HoursSquare.css({ transform: `rotate(${now.getHours() * 30 + (now.getMinutes() / 2 + 45)}deg)` })
         MinutesTriangle.css({ transform: `rotate(${now.getMinutes() * 6}deg)` })
         SecondsCirle.css({ transform: `rotate(${now.getSeconds() * 6}deg)` })
-        HoursSquare.css({ transform: `rotate(${now.getHours() * 30 + (now.getMinutes() / 2 + 45)}deg)` })
     }
     function ChangeHour(H, M) {
         HoursSquare.css({ transform: `rotate(${H * 30 + (M / 2 + 45)}deg)` });
