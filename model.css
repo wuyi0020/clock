@@ -1,0 +1,152 @@
+:root{
+    --fontSize:calc(max(1rem,3dvh));
+}
+.timeinput{
+    display: flex;
+}
+.inputnum {
+    width: 5dvw;
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+}
+
+.uptriangle {
+    fill: #97714d;
+    stroke: #97714d;
+    stroke-width: 100;
+}
+
+.downtriangle {
+    fill: #97714d;
+    stroke: #97714d;
+    stroke-width: 100;
+}
+
+.upanddown {
+    height: calc(3dvh + 20px);
+    width: 1dvw;
+    background-color: #a59681;
+    border-radius: 0% 30% 30% 0%;
+}
+
+.uptriangle:hover {
+    fill: #aaa;
+    stroke: #aaa;
+    stroke-width: 100;
+}
+
+.downtriangle:hover {
+    fill: #aaa;
+    stroke: #aaa;
+    stroke-width: 100;
+}
+
+.triangleSVG {
+    width: 1dvw;
+    height:var(--fontSize);
+    position: absolute;
+}
+
+.triangleSVG.up {
+    top: 0;
+}
+
+.triangleSVG.down {
+    bottom: 0;
+}
+
+.OpenEditBtn {
+    text-align: center;
+    width: 5dvh;
+    height: 5dvh;
+}
+
+.modaltitle {
+    margin-top: 0px;
+}
+
+input[type="number"] {
+    font-family: 'Yozai', Courier, monospacez;
+    background-color: #a59681;
+    border: none;
+    border-radius: 15% 0% 0% 15%;
+    font-size: var(--fontSize);
+    padding: 10px;
+    width: 3dvw;
+    height: 3dvh;
+    text-align: center;
+    -moz-appearance: textfield;
+}
+
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* 选择input[type="number"]旁边的兄弟元素（加减按钮） */
+input[type="number"]+div {
+    position: relative;
+    display: inline-block;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+#modal {
+    display: none;
+    position: relative;
+    background: #775e40;
+    height: calc(max(15dvh, 150px));
+    padding: 20px;
+    padding-bottom: 10dvh;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#closeBtn {
+    text-align: center;
+    width: 3dvw;
+    height: calc(max(3dvh, 40px));
+    border-radius: 5%;
+    border: 1px #97714d solid;
+    cursor: pointer;
+    color: #333;
+    font-size: calc(min(max(3dvh, 40px),var(--fontSize)*2));
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    right:  calc(3dvw + 40px);
+}
+
+#saveBtn {
+    text-align: center;
+    width: 3dvw;
+    height: calc(max(3dvh, 40px));
+    border-radius: 5%;
+    border: 1px #97714d solid;
+    cursor: pointer;
+    color: #333;
+    font-size: calc(min(max(3dvh, 40px),var(--fontSize)*2));
+    font-weight: bold;
+    position: absolute;
+    bottom: 10px;
+    right: calc(20px);
+}

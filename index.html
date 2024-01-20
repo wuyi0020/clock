@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>時鐘</title>
+    <link rel="stylesheet" href="clock.css">
+    <link rel="stylesheet" href="model.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script defer src="edit.js"></script>
+</head>
+
+<body>
+    <div class="screen">
+        <div class="eleclock">
+            <div class="circledot">
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+            </div>
+            <div class="YMD">
+                <h1 class="year"></h1>
+                <h1 class="month"></h1>
+                <h1 class="date"></h1>
+            </div>
+        </div>
+        <div class="ClockTable">
+            <div class="square"></div>
+            <div class="circle">
+                <div class="drop1 drop">
+                </div>
+                <div class="drop2 drop">
+                </div>
+                <div class="drop3 drop">
+                </div>
+                <div class="drop4 drop">
+                </div>
+                <div class="drop5 drop">
+                </div>
+                <div class="drop6 drop">
+                </div>
+                <div class="drop7 drop">
+                </div>
+                <div class="drop8 drop">
+                </div>
+                <div class="drop9 drop">
+                </div>
+                <div class="drop10 drop">
+                </div>
+                <div class="drop11 drop">
+                </div>
+                <div class="drop12 drop">
+                </div>
+            </div>
+            <div class="circledot">
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+                <div class="time_min"></div>
+            </div>
+            <div class="circleTriangle">
+                <div class="triangleA"></div>
+                <div class="triangleB"></div>
+                <div class="triangleC"></div>
+                <div class="triangleD"></div>
+            </div>
+            <div class="cirleSec"></div>
+            <p class="time"></p>
+            <div class="edit" onclick="openModal()"><img src="./edit-button.png" alt=""></div>
+        </div>
+
+        
+    </div>
+
+
+
+    <div id="overlay">
+        <div id="modal">
+            <h2 class="modaltitle">時間調整</h2>
+            <div class="timeinput">
+                <div class="inputnum">
+                    <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputH" class="numberInput" value="00" max="23"
+                        min="0">
+                    <div class="upanddown">
+                        <svg class="triangleSVG up" viewBox="-50 -50 300 300">
+                            <polygon onclick="HourbtnUp()" class="uptriangle" stroke-linejoin="round"
+                                points="100,0 0,200 200,200" />
+                        </svg>
+                        <svg class="triangleSVG down" viewBox="-50 -50 300 300">
+                            <polygon onclick="HourbtnDown()" class="downtriangle" stroke-linejoin="round"
+                                points="100,200 0,0 200,0" />
+                        </svg>
+                    </div>
+                </div>
+                <div>時</div>
+                <div class="inputnum">
+                    <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputM" class="numberInput" value="00" max="59"
+                        min="0">
+                    <div class="upanddown">
+                        <svg class="triangleSVG up" viewBox="-50 -50 300 300">
+                            <polygon onclick="MinbtnUp()" class="uptriangle" stroke-linejoin="round"
+                                points="100,0 0,200 200,200" />
+                        </svg>
+                        <svg class="triangleSVG down" viewBox="-50 -50 300 300">
+                            <polygon onclick="MinbtnDown()" class="downtriangle" stroke-linejoin="round"
+                                points="100,200 0,0 200,0" />
+                        </svg>
+                    </div>
+                </div>
+                <div>分</div>
+                <div class="inputnum">
+                    <input type="number" oninput="checkNum(this)" onchange="MaxMin()" id="numberInputS"
+                        class="numberInput" value="00" max="59" min="0">
+                    <div class="upanddown">
+                        <svg class="triangleSVG up" viewBox="-50 -50 300 300">
+                            <polygon onclick="SecbtnUp()" class="uptriangle" stroke-linejoin="round"
+                                points="100,0 0,200 200,200" />
+                        </svg>
+                        <svg class="triangleSVG down" viewBox="-50 -50 300 300">
+                            <polygon onclick="SecbtnDown()" class="downtriangle" stroke-linejoin="round"
+                                points="100,200 0,0 200,0" />
+                        </svg>
+                    </div>
+                </div>
+                <div>秒</div>
+            </div>
+            <div id="closeBtn" onclick="closeModal()">&times;</div>
+            <div id="saveBtn" onclick="SaveModal()">&nu;</div>
+        </div>
+    </div>
+</body>
+
+<script>
+    const now = new Date();
+    const weekDays = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+    const months = ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'];
+    const year = now.getFullYear();
+    const weekDay = weekDays[now.getDay()];
+    const month = months[now.getMonth()];
+    const date = now.getDate().toString().padStart(2, '0');
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    const Time = $(".time");
+    const MinutesTriangle = $(".circleTriangle");
+    const SecondsCirle = $(".cirleSec");
+    const HoursSquare = $(".square");
+    const YearText = $(".year");
+    const MonthText = $(".month");
+    const DateText = $(".date");
+    MinutesTriangle.css({ transform: `rotate(${now.getMinutes() * 6}deg)` });
+    SecondsCirle.css({ transform: `rotate(${now.getSeconds() * 6}deg)` });
+    HoursSquare.css({ transform: `rotate(${now.getHours() * 30 + (now.getMinutes() / 2 + 45)}deg)` });
+    YearText.text(`${year}`);
+    MonthText.text(`${month}`);
+    DateText.text(`${date}`);
+    Time.text(`${hours}:${minutes}:${seconds}`);
+
+    function openModal() {
+        document.getElementById('overlay').style.display = 'flex';
+        document.getElementById('modal').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('overlay').style.display = 'none';
+        document.getElementById('modal').style.display = 'none';
+    }
+    function editTime() {
+        MinutesTriangle.css({ transform: `rotate(${now.getMinutes() * 6}deg)` })
+        SecondsCirle.css({ transform: `rotate(${now.getSeconds() * 6}deg)` })
+        HoursSquare.css({ transform: `rotate(${now.getHours() * 30 + (now.getMinutes() / 2 + 45)}deg)` })
+    }
+    function ChangeHour(H, M) {
+        HoursSquare.css({ transform: `rotate(${H * 30 + (M / 2 + 45)}deg)` });
+    }
+    function ChangeMin(M) {
+        MinutesTriangle.css({ transform: `rotate(${M * 6}deg)` });
+    }
+    function ChangeSec(S) {
+        SecondsCirle.css({ transform: `rotate(${S * 6}deg)` });
+    }
+
+    InputHour = $("#numberInputH")
+    InputMin = $("#numberInputM")
+    InputSec = $("#numberInputS")
+    function checkNum(input) {
+        input.value = input.value >= 0 ? input.value : 0;
+    }
+    function MaxMin() {
+        let H = InputHour[0].valueAsNumber;
+        let M = InputMin[0].valueAsNumber;
+        let S = InputSec[0].valueAsNumber;
+        let HMax = InputHour[0].max
+        let MMax = InputMin[0].max
+        let SMax = InputSec[0].max
+        let HMin = InputHour[0].Min
+        let MMin = InputMin[0].Min
+        let SMin = InputSec[0].Min
+        if (H > HMax) {
+            H = HMax;
+        } else if (H < HMin) {
+            H = HMin;
+        }
+        if (M > MMax) {
+            M = MMax;
+        } else if (M < MMin) {
+            M = MMin;
+        }
+        if (S > SMax) {
+            S = SMax;
+        } else if (S < SMin) {
+            S = SMin;
+        }
+        H = isNaN(H) ? 0 : H;
+        M = isNaN(M) ? 0 : M;
+        S = isNaN(S) ? 0 : S;
+        if (H > 9) {
+            InputHour[0].value = H;
+        } else {
+            InputHour[0].value = `0${H}`;
+        }
+        if (M > 9) {
+            InputMin[0].value = M;
+        } else {
+            InputMin[0].value = `0${M}`;
+        }
+        if (S > 9) {
+            InputSec[0].value = S;
+        } else {
+            InputSec[0].value = `0${S}`;
+        }
+
+
+    }
+    function SaveModal() {
+        let H = InputHour[0].valueAsNumber;
+        let M = InputMin[0].valueAsNumber;
+        let S = InputSec[0].valueAsNumber;
+        Time.text(`${H>9? H:`0${H}`}:${M>9? M:`0${M}`}:${S>9? S:`0${S}`}`)
+        ChangeHour(H, M);
+        ChangeMin(M);
+        ChangeSec(S);
+        closeModal();
+    }
+
+</script>
+<style>
+    :root {
+        --WidthAndHeight: calc(min(40dvh, 30dvw));
+        --clock: calc(var(--WidthAndHeight)*0.27);
+        --TriangleMove: calc((var(--WidthAndHeight)*0.3 - min(50dvh, 50dvw)/50*4)*0.9);
+        --TriangleWidth: calc(var(--WidthAndHeight)*0.75*0.9);
+        --background: #212f22;
+        --fontSize: calc(max(1rem, 2dvh));
+    }
+
+    * {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    @font-face {
+        font-family: 'Yozai';
+        src:
+            url('./Yozai-Medium.ttf') format("truetype"),
+    }
+
+    h1 {
+        font-size: calc(var(--WidthAndHeight)/50*10);
+        font-family: 'Yozai', Courier, monospacez;
+        color: #97714d;
+    }
+
+    h1.date {
+
+        font-size: calc(var(--WidthAndHeight)/50*15);
+        text-align: center;
+    }
+
+    .edit {
+        position: absolute;
+        align-self: flex-end;
+        justify-self: start;
+        width: calc(var(--WidthAndHeight)/50*5);
+        height: calc(var(--WidthAndHeight)/50*5);
+        display: block;
+        background-color: rgba(255, 240, 240, 0);
+        transform: translate(calc(var(--WidthAndHeight)), calc(var(--WidthAndHeight)/50*30));
+    }
+
+    .edit>img {
+
+        width: calc(var(--WidthAndHeight)/50*5);
+        height: calc(var(--WidthAndHeight)/50*5);
+    }
+
+    .ClockTable>.time {
+        position: absolute;
+        font-size: calc(var(--WidthAndHeight)/50*5);
+        font-family: 'Yozai', Courier, monospacez;
+        color: #97714d;
+        transform: translate(calc(var(--WidthAndHeight)/50*20), calc(var(--WidthAndHeight)/50*40));
+    }
+
+    html {
+        overflow: -moz-hidden-unscrollable;
+        height: 100%;
+    }
+
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        -ms-overflow-style: none;
+        height: 100%;
+        width: calc(100vw + 18px);
+        overflow: auto;
+        background: var(--background);
+    }
+
+    .ClockTable {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--WidthAndHeight);
+        height: var(--WidthAndHeight);
+    }
+
+    .eleclock {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: var(--WidthAndHeight);
+        height: var(--WidthAndHeight);
+        transform: translate(calc(var(--WidthAndHeight)/50*-10), calc(var(--WidthAndHeight)/50*-10));
+    }
+
+    .eleclock>.YMD {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+
+    .eleclock>.circledot {
+        position: absolute;
+        scale: 1.5;
+    }
+
+    .circleTriangle {
+        width: calc(var(--WidthAndHeight)*0.76);
+        height: calc(var(--WidthAndHeight)*0.76);
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(90deg);
+        border: #97714d 1dvh;
+    }
+
+    .triangleA {
+        position: absolute;
+        width: var(--TriangleWidth);
+        height: 1px;
+        border-top: calc(min(50dvh, 50dvw)/50) solid #97714d;
+        transform: rotate(0deg) translateY(var(--TriangleMove));
+    }
+
+    .triangleB {
+        position: absolute;
+        width: var(--TriangleWidth);
+        height: 1px;
+        border-top: calc(min(50dvh, 50dvw)/50) solid #97714d;
+        transform: rotate(120deg) translateY(var(--TriangleMove));
+    }
+
+    .triangleC {
+        position: absolute;
+        width: var(--TriangleWidth);
+        height: 1px;
+        border-top: calc(min(50dvh, 50dvw)/50) solid #97714d;
+        transform: rotate(-120deg) translateY(var(--TriangleMove));
+    }
+
+    .triangleD {
+        position: absolute;
+        width: calc(var(--TriangleWidth)*2/3*0.95);
+        height: calc(var(--WidthAndHeight)/50*2);
+        box-sizing: border-box;
+        background-color: var(--background);
+        border-radius: 0 50% 50% 0;
+        border-top: calc(min(50dvh, 50dvw)/50*0.7) solid #97714d;
+        border-bottom: calc(min(50dvh, 50dvw)/50*0.7) solid #97714d;
+        border-right: solid var(--background);
+        transform: rotate(90deg) translateX(calc(var(--TriangleWidth)/3* -1 + min(50dvh, 50dvw)/50));
+        /* box-shadow: calc(min(50dvh, 50dvw)/50) calc(min(50dvh, 50dvw)/50) #97714d,calc(min(50dvh, 50dvw)/50) calc(min(50dvh, 50dvw)/50*-1) #97714d; */
+    }
+
+    .cirleSec {
+        width: calc(var(--TriangleWidth)*2/3*0.76);
+        height: calc(var(--TriangleWidth)*2/3*0.76);
+        border-radius: 50%;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        z-index: -2;
+        justify-content: center;
+        transform: rotate(0deg);
+        border: 1dvh solid #97714d;
+    }
+
+    .cirleSec::after {
+        content: "";
+        position: absolute;
+        width: calc(var(--TriangleWidth)*2/3*0.95/2);
+        height: calc(var(--WidthAndHeight)/50*2);
+        box-sizing: border-box;
+        background-color: var(--background);
+        border-radius: 0 50% 50% 0;
+        border-top: calc(min(50dvh, 50dvw)/50*0.7) solid #97714d;
+        border-bottom: calc(min(50dvh, 50dvw)/50*0.7) solid #97714d;
+        border-right: solid var(--background);
+        transform: rotate(90deg) translateX(calc(var(--TriangleWidth)*2/3*0.76/4*-1));
+    }
+
+    .square {
+        width: var(--WidthAndHeight);
+        height: var(--WidthAndHeight);
+        border: 1dvh #97714d;
+        border-style: solid;
+        box-sizing: border-box;
+        transform: rotate(45deg);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5dvh;
+        position: absolute;
+    }
+
+    .square::after {
+        position: absolute;
+        content: "";
+        width: calc(var(--WidthAndHeight)/50*4);
+        height: calc((var(--WidthAndHeight)/5*2.5 * sqrt(2)));
+        border: calc(var(--WidthAndHeight)/50*1) #97714d;
+        border-top: solid var(--background);
+        background-color: var(--background);
+        border-style: solid;
+        box-sizing: border-box;
+        border-radius: 0 0 50% 50%;
+        transform: rotate(-45deg) translateY(calc(-1*var(--WidthAndHeight) * sqrt(2)/4.5));
+        /* box-shadow: calc(var(--WidthAndHeight)/50*1.1) 0px #97714d, calc(var(--WidthAndHeight)/50*-1.1) 0px #97714d, calc(var(--WidthAndHeight)/50*1.1) calc(var(--WidthAndHeight)/50*1.1) #97714d, calc(var(--WidthAndHeight)/50*-1.1) calc(var(--WidthAndHeight)/50*1.1) #97714d, 0px calc(var(--WidthAndHeight)/50*1.1) #97714d; */
+        z-index: 1;
+    }
+
+    .screen {
+        width: 100dvw;
+        height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle {
+        width: calc(var(--WidthAndHeight)*0.76);
+        height: calc(var(--WidthAndHeight)*0.76);
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(15deg);
+        border: #97714d 1dvh;
+    }
+
+    .circledot {
+        width: calc(var(--WidthAndHeight)*0.76);
+        height: calc(var(--WidthAndHeight)*0.76);
+        border-radius: 50%;
+        position: absolute;
+        z-index: -1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(15deg);
+        border: #97714d 1dvh;
+
+    }
+
+    .time_min {
+        position: absolute;
+        width: calc(min(1dvh, 1dvw));
+        height: calc(min(1dvh, 1dvw));
+        border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
+        background-color: #97714d;
+    }
+
+    .drop {
+        position: absolute;
+        width: calc(min(3dvh, 3dvw));
+        height: calc(min(3dvh, 3dvw));
+        border-radius: 65% 35% 100% 0% / 100% 35% 65% 0%;
+        background-color: #97714d;
+    }
+
+    .drop1 {
+        transform: rotate(0deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop2 {
+        transform: rotate(30deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop3 {
+        transform: rotate(60deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop4 {
+        transform: rotate(90deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop5 {
+        transform: rotate(120deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop6 {
+        transform: rotate(150deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop7 {
+        transform: rotate(180deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop8 {
+        transform: rotate(210deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop9 {
+        transform: rotate(240deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop10 {
+        transform: rotate(270deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop11 {
+        transform: rotate(300deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+
+    .drop12 {
+        transform: rotate(330deg) translate(var(--clock), calc(var(--clock)*-1));
+    }
+</style>
+
+</html>

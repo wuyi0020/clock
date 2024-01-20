@@ -1,0 +1,97 @@
+.time_min:first-child{
+    transform: rotate(6deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(2){
+    transform: rotate(12deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(3){
+    transform: rotate(18deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(4){
+    transform: rotate(24deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(5){
+    transform: rotate(36deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(6){
+    transform: rotate(42deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(7){
+    transform: rotate(48deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(8){
+    transform: rotate(54deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(9){
+    transform: rotate(66deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(10){
+    transform: rotate(72deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(11){
+    transform: rotate(78deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(12){
+    transform: rotate(84deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(13){
+    transform: rotate(96deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(14){
+    transform: rotate(102deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(15){
+    transform: rotate(108deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(16){
+    transform: rotate(114deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(17){
+    transform: rotate(126deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(18){
+    transform: rotate(132deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(19){
+    transform: rotate(138deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(20){
+    transform: rotate(144deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(21){
+    transform: rotate(156deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(22){
+    transform: rotate(162deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(23){
+    transform: rotate(168deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(24){
+    transform: rotate(174deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(25){
+    transform: rotate(186deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(26){
+    transform: rotate(192deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(27){
+    transform: rotate(198deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(28){
+    transform: rotate(204deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(29){
+    transform: rotate(216deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(30){
+    transform: rotate(222deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(31){
+    transform: rotate(228deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(32){
+    transform: rotate(234deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(33){
+    transform: rotate(246deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(34){
+    transform: rotate(252deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(35){
+    transform: rotate(258deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(36){
+    transform: rotate(264deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(37){
+    transform: rotate(276deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(38){
+    transform: rotate(282deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(39){
+    transform: rotate(288deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(40){
+    transform: rotate(294deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(41){
+    transform: rotate(306deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(42){
+    transform: rotate(312deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(43){
+    transform: rotate(318deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(44){
+    transform: rotate(324deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(45){
+    transform: rotate(336deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(46){
+    transform: rotate(342deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(47){
+    transform: rotate(348deg) translate(var(--clock), calc(var(--clock)*-1));
+}.time_min:nth-child(48){
+    transform: rotate(354deg) translate(var(--clock), calc(var(--clock)*-1));
+}
