@@ -2,6 +2,7 @@
     --fontSize: calc(max(1rem, 2dvh));
     --minWidthSize: calc(max(1rem, 3dvw));
     --textWidth: calc(max(1rem, 2dvw, 2dvh));
+    --inputnum:calc(max(1rem, 3dvw, var(--minWidthSize)) + 20px + var(--textWidth) + max(5dvh, var(--minWidthSize)));
 }
 .Htext,.Mtext ,.Stext{
     width: var(--textWidth);
@@ -11,11 +12,11 @@
     display: flex;
 }
 .inputnum {
-    width: calc(max(1rem, 3dvw, var(--minWidthSize)) + 20px + var(--textWidth) + max(5dvh, var(--minWidthSize)));
+    width: var(--inputnum);
     display: flex;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 20px;
+    padding-left: 1dvw;
     align-items: flex-end;
 }
 
@@ -120,7 +121,7 @@ body {
     position: relative;
     background: #775e40;
     height: calc(max(15dvh, 150px));
-    width: calc(min(max(45dvh, 50dvw), 90dvw));
+    width: calc(var(--inputnum)*3 + 3dvw);
     padding: 20px;
     padding-bottom: 10dvh;
     border-radius: 5px;
